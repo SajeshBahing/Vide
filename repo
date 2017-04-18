@@ -1,3 +1,5 @@
 https://github.com/scrooloose/nerdtree.git
 https://github.com/Raimondi/delimitMate.git
-https://github.com/drmingdrmer/vim-tabbar
+https://github.com/vim-syntastic/syntastic.git
+https://github.com/kien/ctrlp.vim.git
+https://github.com/drmingdrmer/vim-tabbar.git
