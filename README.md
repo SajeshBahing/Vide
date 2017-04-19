@@ -19,4 +19,6 @@ or
 
 ctags --exclude=.git --exclude='*.log' -R * `bundle show --paths` (require ruby-bundler package for this command to run)
 
+Reference this repo for cool plugins
 
+https://github.com/amix/vimrc

@@ -50,6 +50,28 @@ let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+:autocmd InsertEnter * set cul
+:autocmd InsertLeave * set nocul
+
+function! Multiple_cursors_before()
+    exe 'NeoCompleteLock'
+    echo 'Disabled autocomplete'
+endfunction
+
+function! Multiple_cursors_after()
+    exe 'NeoCompleteUnlock'
+    echo 'Enabled autocomplete'
+endfunction
+
+source ~/.vim/extend_vimrc/lightline.vim 
+
 "Neocomplete configuration
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
@@ -91,6 +113,8 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_working_path_mode = 0
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
