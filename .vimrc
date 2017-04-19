@@ -40,6 +40,9 @@ let g:syntastic_check_on_wq = 0
 " php-codesniffer, phpmd and php must be installed for these to work.
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 
+:set autochdir 
+:set tags+=./tags;
+
 "CtrlP settings
 "Install silversearcher-ag module for last command to run
 let g:ctrlp_match_window = 'bottom,order:ttb'
