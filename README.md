@@ -19,6 +19,14 @@ or
 
 ctags --exclude=.git --exclude='*.log' -R * `bundle show --paths` (require ruby-bundler package for this command to run)
 
+or
+
+use ctags -R --PHP-kinds=cfi
+
+if traits are not supported please use this command to generate ctags
+
+ctags -R --PHP-kinds=cfi --regex-php="/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i"
+
 Reference this repo for cool plugins
 
 https://github.com/amix/vimrc
