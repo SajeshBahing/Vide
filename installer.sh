@@ -6,10 +6,19 @@ popd > /dev/null
 
 today=`date +%Y%m%d`
 
+if [ ! -d ~/.vim/bundle/ ]; then
+    mkdir ~/.vim/bundle
+fi
+
+if [ ! -d ~/.vim/autoload/ ]; then
+    mkdir ~/.vim/autoload
+fi
+
+apt-get install vim vim-nox vim-gtk vim-gnome vim-athena silversearcher-ag phpmd
+
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
 while IFS='' read -r line || [[ -n "$line" ]]; do
-    if [ ! -d ~/.vim/bundle/ ]; then
-        mkdir ~/.vim/bundle
-    fi
 
     cd ~/.vim/bundle
 
