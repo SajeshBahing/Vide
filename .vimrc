@@ -20,6 +20,7 @@ syntax on
 :set cindent 
 
 autocmd vimenter * NERDTree
+let NERDTreeShowHidden=1
 
 map <F3> :bprevious<CR>
 map <F4> :bnext<CR>
@@ -59,3 +60,4 @@ autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 
 source ~/.vim/extend_vimrc/neocomplete.vim
+

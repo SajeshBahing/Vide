@@ -30,3 +30,18 @@ ctags -R --PHP-kinds=cfi --regex-php="/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,trait
 Reference this repo for cool plugins
 
 https://github.com/amix/vimrc
+
+To Avoid warnings about docs above classes and functions update phpcs configuration
+
+$ phpcs --config-set error_severity 1
+$ phpcs --config-set warning_severity 8
+
+and use PSR2 Standard for better result
+
+$ phpcs --config-set default_standard Squiz
+
+required linux packaeges
+
+php-cli, phpmd, phpcs (install from pear not from apt-get), silversearcher-ag, vim-nox, vim-gtk, vim-gnome, vim-athena
+
+
