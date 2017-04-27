@@ -19,12 +19,12 @@ syntax on
 :set autoindent
 :set cindent 
 
-autocmd vimenter * NERDTree
-let NERDTreeShowHidden=1
+" autocmd vimenter * NERDTree
+" let NERDTreeShowHidden=1
 
 map <F3> :bprevious<CR>
 map <F4> :bnext<CR>
-map <F5> :bd<CR>
+map <F6> :bd<CR>
 
 :set path=$PWD/**
 
@@ -50,6 +50,7 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_show_hidden = 1
 
 
 function! IPhpExpandClass()
@@ -61,3 +62,27 @@ autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 
 source ~/.vim/extend_vimrc/neocomplete.vim
 
+set t_Co=256
+
+"Color schemes
+
+" for vim 8
+if (has("termguicolors"))
+    set termguicolors
+endif
+
+syntax enable
+
+colorscheme github
+
+hi TabLine      guifg=#333 guibg=#222 gui=none ctermfg=254 ctermbg=238 cterm=none
+hi TabLineSel   guifg=#666 guibg=#222 gui=bold ctermfg=231 ctermbg=235 cterm=bold
+hi TabLineFill  guifg=#999 guibg=#222 gui=none ctermfg=254 ctermbg=238 cterm=none
+
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+let &titlestring = @%
+:set title
+
+hi cursorline cterm=none ctermbg=gray ctermfg=black guibg=gray guifg=black
+set nocursorline
